@@ -1,0 +1,41 @@
+name: codepad_editor
+description: A powerful text and code editor for Android with syntax highlighting and Markdown preview.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # 文件选择器
+  file_picker: 5.5.0
+
+  # 权限处理
+  permission_handler: 11.3.1
+
+  # Markdown渲染
+  flutter_markdown: 0.7.4+1
+
+  # 路径处理
+  path: 1.9.1
+  path_provider: 2.1.5
+
+  # 共享偏好设置（保存设置）
+  shared_preferences: 2.5.3
+
+  # 状态管理
+  provider: 6.1.5+1
+
+  # 图标
+  cupertino_icons: 1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: 5.0.0
+
+flutter:
+  uses-material-design: true
