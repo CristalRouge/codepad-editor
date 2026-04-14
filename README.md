@@ -91,3 +91,34 @@ A new Flutter project.
 
 ## 🏗️ 项目结构
 
+lib/
+├── main.dart                       # 应用入口，Provider 初始化，主题配置
+├── models/
+│   └── editor_state.dart           # 全局编辑器状态（ChangeNotifier）
+├── screens/
+│   └── editor_screen.dart          # 主编辑器页面 UI 与交互逻辑
+├── services/
+│   └── file_service.dart           # 文件操作服务（打开/保存/权限管理）
+├── utils/
+│   └── syntax_highlighter.dart     # 多语言语法高亮引擎
+└── widgets/
+    └── code_editor.dart            # 行号编辑器组件 & 高亮只读视图组件
+
+
+### 架构说明
+
+本项目采用 **Provider** 进行状态管理。`EditorState` 作为全局状态中心，管理文件内容、文件路径、修改状态、字体大小、换行模式、只读模式、Markdown 预览模式等所有编辑器状态。UI 层通过 `Consumer<EditorState>` 响应式重建，实现数据与视图的解耦。
+
+语法高亮引擎采用**基于正则表达式的分段着色**方案：针对每种语言定义一组有序的正则模式与对应颜色，通过通用的 `_applyPatterns()` 方法按优先级顺序匹配并切割文本为带颜色的 `TextSpan` 片段，最终组合为富文本渲染。
+
+---
+
+## 🚀 快速开始
+
+### 环境要求
+
+- **Flutter SDK** ≥ 3.0.0（< 4.0.0）
+- **Dart SDK** ≥ 3.0.0
+- **Android SDK** — 支持 Android 5.0+（API 21+）
+- 开发工具：Android Studio / VS Code（推荐安装 Flutter 插件）
+
