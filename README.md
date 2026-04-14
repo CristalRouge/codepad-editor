@@ -106,6 +106,127 @@ lib/
     └── code_editor.dart            # Line-numbered editor & highlighted read-only view
 ```
 
+# ✏️ CodePad Editor
+
+The project uses **Provider** for state management. `EditorState` serves as the centralized state hub, managing file content, file path, modification status, font size, word wrap mode, read-only mode, and Markdown preview mode. The UI layer reactively rebuilds through `Consumer<EditorState>`, achieving clean separation between data and presentation.
+
+The syntax highlighting engine employs a **regex-based segment coloring** approach: for each language, an ordered list of regex patterns with corresponding colors is defined. A generic `_applyPatterns()` method matches patterns by priority, splits the source text into colored `TextSpan` segments, and assembles them into rich text for rendering.
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- **Flutter SDK** ≥ 3.0.0 (< 4.0.0)
+- **Dart SDK** ≥ 3.0.0
+- **Android SDK** — Android 5.0+ (API 21+) supported
+- IDE: Android Studio / VS Code (Flutter plugin recommended)
+
+### Installation & Running
+
+1. **Clone the repository**
+
+`bash
+   git clone https://github.com/CristalRouge/codepad-editor.git
+   cd codepad-editor`
+
+1. **Install dependencies**
+
+`bash
+   flutter pub get`
+
+1. **Connect an Android device or launch an emulator**
+
+`bash
+   flutter devices`
+
+1. **Run the app**
+
+`bash
+   flutter run`
+
+1. **Build a release APK**
+
+`bash
+   flutter build apk --release`
+
+The generated APK is located at `build/app/outputs/flutter-apk/app-release.apk`.
+
+---
+
+## 📦 Dependencies
+
+| Package | Version | Purpose |
+| --- | --- | --- |
+| `provider` | 6.1.5+1 | State management |
+| `file_picker` | 5.5.0 | System file picker |
+| `permission_handler` | 11.3.1 | Android storage permission handling |
+| `flutter_markdown` | 0.7.4+1 | Markdown rendering engine |
+| `path` | 1.9.1 | File path utilities |
+| `path_provider` | 2.1.5 | Device storage directory access |
+| `shared_preferences` | 2.5.3 | Local preference persistence |
+| `cupertino_icons` | 1.0.8 | Icon assets |
+
+---
+
+## 🔐 Permissions
+
+This app requires **storage permissions** to read and save files. The permission strategy automatically adapts to the Android version:
+
+| Android Version | Permission Strategy |
+| --- | --- |
+| Android 13+ (API 33+) | Direct access via SAF (Storage Access Framework), no extra permissions needed |
+| Android 11–12 (API 30–32) | Requests `MANAGE_EXTERNAL_STORAGE` permission |
+| Android 10 and below (API ≤ 29) | Requests legacy `READ/WRITE_EXTERNAL_STORAGE` permissions |
+
+If the permission is permanently denied, the app displays a dialog guiding the user to the system settings to grant access manually.
+
+---
+
+## 🎨 Theme & Color Scheme
+
+The app features a **VS Code Dark**-inspired dark theme throughout. Key colors are listed below:
+
+| Element | Hex Code | Description |
+| --- | --- | --- |
+| Editor Background | `#1E1E1E` | Dark gray editing area |
+| Title Bar Background | `#323233` | Slightly lighter gray top bar |
+| Line Number Gutter | `#252526` | Line number area |
+| Plain Text | `#D4D4D4` | Default foreground color |
+| Keywords | `#569CD6` | Blue |
+| Strings | `#CE9178` | Orange |
+| Comments | `#6A9955` | Green |
+| Numbers | `#B5CEA8` | Light green |
+| Function Names | `#DCDCAA` | Pale yellow |
+| Types / Tags | `#4EC9B0` | Teal |
+| Attributes / Variables | `#9CDCFE` | Light blue |
+| Decorators | `#DCDCAA` | Pale yellow |
+| Preprocessor Directives | `#C586C0` | Purple |
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to open Issues and submit Pull Requests.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](https://LICENSE).
+
+---
+
+  Built with Flutter 💙
+
+```
 
 
 --
