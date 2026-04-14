@@ -302,9 +302,9 @@ class _EditorScreenState extends State<EditorScreen> {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 1),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.2),
+        color: color.withOpacity(0.2),
         borderRadius: BorderRadius.circular(3),
-        border: Border.all(color: color.withValues(alpha: 0.5), width: 0.5),
+        border: Border.all(color: color.withOpacity(0.5), width: 0.5),
       ),
       child: Text(
         displayName,
@@ -534,7 +534,7 @@ class _EditorScreenState extends State<EditorScreen> {
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.4),
+                    color: Colors.black.withOpacity(0.4),
                     blurRadius: 8,
                     offset: const Offset(0, 4),
                   ),
@@ -571,7 +571,7 @@ class _EditorScreenState extends State<EditorScreen> {
               borderRadius: BorderRadius.circular(6),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.3),
+                  color: Colors.black.withOpacity(0.3),
                   blurRadius: 4,
                   offset: const Offset(0, 2),
                 ),
@@ -591,12 +591,12 @@ class _EditorScreenState extends State<EditorScreen> {
             width: 44,
             height: 44,
             decoration: BoxDecoration(
-              color: color.withValues(alpha: 0.15),
+              color: color.withOpacity(0.15),
               shape: BoxShape.circle,
-              border: Border.all(color: color.withValues(alpha: 0.5)),
+              border: Border.all(color: color.withOpacity(0.5)),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.2),
+                  color: Colors.black.withOpacity(0.2),
                   blurRadius: 4,
                   offset: const Offset(0, 2),
                 ),
