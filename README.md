@@ -1,7 +1,7 @@
-# codepad_editor
 
-A new Flutter project.
-
+<p align="center">
+  <img src="android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" width="120" alt="CodePad Editor Icon">
+</p>
 
 # ✏️ CodePad Editor
 
