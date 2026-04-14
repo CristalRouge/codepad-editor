@@ -12,6 +12,104 @@ A new Flutter project.
   <img src="https://img.shields.io/badge/License-MIT-yellow" alt="License">
 </p>
 
+
+**CodePad Editor** is a lightweight code and text editor for Android, built with Flutter. Featuring a VS Code Dark-inspired theme, built-in multi-language syntax highlighting, real-time Markdown preview, line numbers, pinch-to-zoom font scaling, and more — it delivers a smooth, professional editing experience on mobile.
+
+---
+
+## 📸 Screenshots
+
+| Code Editing | Syntax Highlighting (Read-only) | Markdown Preview |
+|:---:|:---:|:---:|
+| Line numbers + monospace editing | Multi-language keyword coloring | Live-rendered MD documents |
+
+---
+
+## ✨ Features
+
+### 🎨 Multi-Language Syntax Highlighting
+
+Supports syntax highlighting for **15+ programming languages**, styled after the classic VS Code Dark theme:
+
+| Language | Extensions |
+|----------|-----------|
+| HTML | `.html`, `.htm` |
+| CSS | `.css` |
+| JavaScript | `.js`, `.mjs`, `.cjs`, `.jsx` |
+| TypeScript | `.ts`, `.tsx` |
+| Python | `.py`, `.pyw` |
+| Java | `.java` |
+| Dart | `.dart` |
+| Kotlin | `.kt`, `.kts` |
+| C | `.c`, `.h` |
+| C++ | `.cpp`, `.cc`, `.cxx`, `.hpp` |
+| XML / SVG | `.xml`, `.svg` |
+| JSON | `.json`, `.jsonc` |
+| Shell / Bash | `.sh`, `.bash`, `.zsh` |
+| Markdown | `.md`, `.markdown` |
+| YAML | `.yaml`, `.yml` |
+
+Highlighted elements include: keywords, strings, comments, numbers, function names, types, decorators, preprocessor directives, HTML tags/attributes, and more.
+
+### 📝 Professional Code Editing
+
+- **Line Numbers** — Real-time line numbers displayed on the left side, synchronized scrolling with the editor
+- **Monospace Font** — Uses `monospace` font family for proper code alignment
+- **Word Wrap Toggle** — One-tap toggle to enable/disable word wrapping
+- **Line & Character Count** — Status bar displays real-time line count and character count
+- **Language Badge** — Auto-detects language by file extension and displays a color-coded badge in the title bar
+- **Modification Indicator** — An orange dot `●` appears next to the filename when there are unsaved changes
+
+### 📂 Full File Operations
+
+- **New File** — Creates a blank document, defaults to `untitled.txt`
+- **Open File** — Opens local text files via the system file picker (SAF), supporting 40+ file extensions
+- **Save** — Saves the current content to the original file path
+- **Save As** — Saves with a custom filename to the device's Documents directory
+- **Unsaved Changes Alert** — Before creating or opening a new file, a dialog prompts the user to Save / Discard / Cancel if there are unsaved modifications
+
+### 📖 Real-Time Markdown Preview
+
+When a `.md` / `.markdown` file is opened, a "MD Preview" button automatically appears in the floating menu. Supported Markdown elements include:
+
+Headings (h1–h6), paragraphs, bold/italic, inline code, code blocks, blockquotes, lists, tables, horizontal rules — all rendered with a dark theme stylesheet.
+
+### 🔍 Read-Only Mode
+
+Switching to read-only mode disables text input and enables **syntax-highlighted rendering** for code files (via `SelectableText.rich`), allowing users to select and copy text. A lock icon appears in the title bar as a visual indicator.
+
+### 🔎 Font Size Adjustment
+
+- **Pinch-to-Zoom** — Use a two-finger pinch gesture in the editor area to adjust font size in real time (8px – 48px)
+- **Menu Buttons** — The floating menu provides dedicated "Increase Font" / "Decrease Font" buttons
+- **Preference Persistence** — Font size and word wrap settings are automatically saved to `SharedPreferences` and restored on next launch
+
+### 🎯 Floating Action Menu
+
+A expandable/collapsible floating action button (FAB-style) is positioned at the bottom-right corner. When expanded, it reveals all available actions: New, Open, Save, Save As, Read-Only/Edit mode toggle, Markdown preview toggle, and font size controls. The menu button features a smooth rotation animation.
+
+
+## 🏗️ Project Structure
+
+```text
+lib/
+├── main.dart                       # App entry point, Provider setup, theme config
+├── models/
+│   └── editor_state.dart           # Global editor state (ChangeNotifier)
+├── screens/
+│   └── editor_screen.dart          # Main editor screen UI & interaction logic
+├── services/
+│   └── file_service.dart           # File operations service (open/save/permissions)
+├── utils/
+│   └── syntax_highlighter.dart     # Multi-language syntax highlighting engine
+└── widgets/
+    └── code_editor.dart            # Line-numbered editor & highlighted read-only view
+```
+
+
+
+--
+
 **CodePad Editor** 是一款基于 Flutter 开发的 Android 端轻量级代码与文本编辑器。它拥有 VS Code Dark 风格的深色主题界面，内置多语言语法高亮、Markdown 实时预览、行号显示、双指缩放字体等实用功能，为移动端编程和文本编辑提供流畅、专业的体验。
 
 ---
@@ -90,7 +188,7 @@ A new Flutter project.
 ---
 
 ## 🏗️ 项目结构
-
+```text
 lib/
 ├── main.dart                       # 应用入口，Provider 初始化，主题配置
 ├── models/
@@ -103,7 +201,7 @@ lib/
 │   └── syntax_highlighter.dart     # 多语言语法高亮引擎
 └── widgets/
     └── code_editor.dart            # 行号编辑器组件 & 高亮只读视图组件
-
+```
 
 ### 架构说明
 
